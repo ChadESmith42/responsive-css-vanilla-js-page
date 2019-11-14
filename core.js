@@ -37,8 +37,7 @@ let authors = [{
 }];
 
 //Create a function to add the details to the document:
-//This function is called by the <body onload=()> tag in the
-//document;
+
 function addArticleDetails() {
     //Select all NODES with Class="article__author"
     var x = document.getElementsByClassName("article__author");
@@ -51,13 +50,13 @@ function addArticleDetails() {
     var y = document.getElementsByClassName("article__date");
     if (x.length) {
         for (let index = 0; index < y.length; index++) {
-            y[index].innerHTML = authors[index].date;
+            y[index].innerHTML = "Published " + authors[index].date;
         }
     }
 }
 
 //This function toggles the menu button for mobile devices and toggles
-//the mobile menu items visbility.
+//the mobile menu items visibility.
 function toggleMenu(x) {
     //Toggle the menu button to "show" the menu
     x.classList.toggle("change");
@@ -76,36 +75,47 @@ function setActive(x) {
 
     //Basically, need to turn off the active for the previous link ...
     //Check the other links, and remove the active class;
-    if (document.getElementById("home").classList.contains("active")) {
-        document.getElementById("home").classList.remove("active");
+
+    // Refactored this whole function to 6 lines of code below:
+
+    // if (document.getElementById("home").classList.contains("active")) {
+    //     document.getElementById("home").classList.remove("active");
+    // }
+    // if (document.getElementById("about").classList.contains("active")) {
+    //     document.getElementById("about").classList.remove("active");
+    // }
+    // if (document.getElementById("work").classList.contains("active")) {
+    //     document.getElementById("work").classList.remove("active");
+    // }
+    // if (document.getElementById("links").classList.contains("active")) {
+    //     document.getElementById("links").classList.remove("active");
+    // }
+    // if (document.getElementById("contact").classList.contains("active")) {
+    //     document.getElementById("contact").classList.remove("active");
+    // }
+    // if (document.getElementById("home-mobile").classList.contains("active")) {
+    //     document.getElementById("home-mobile").classList.remove("active");
+    // }
+    // if (document.getElementById("about-mobile").classList.contains("active")) {
+    //     document.getElementById("about-mobile").classList.remove("active");
+    // }
+    // if (document.getElementById("work-mobile").classList.contains("active")) {
+    //     document.getElementById("work-mobile").classList.remove("active");
+    // }
+    // if (document.getElementById("links-mobile").classList.contains("active")) {
+    //     document.getElementById("links-mobile").classList.remove("active");
+    // }
+    // if (document.getElementById("contact-mobile").classList.contains("active")) {
+    //     document.getElementById("contact-mobile").classList.remove("active");
+    // }
+
+    var locations = [ 'home', 'about', 'work', 'links', 'contact','home-mobile', 'about-mobile', 'work-mobile','links-mobile','contact-mobile'];
+    for (let loc of locations) {
+        if (document.getElementById(loc).classList.contains("active")) {
+            document.getElementById(loc).classList.remove("active");
+        }
     }
-    if (document.getElementById("about").classList.contains("active")) {
-        document.getElementById("about").classList.remove("active");
-    }
-    if (document.getElementById("work").classList.contains("active")) {
-        document.getElementById("work").classList.remove("active");
-    }
-    if (document.getElementById("links").classList.contains("active")) {
-        document.getElementById("links").classList.remove("active");
-    }
-    if (document.getElementById("contact").classList.contains("active")) {
-        document.getElementById("contact").classList.remove("active");
-    }
-    if (document.getElementById("home-mobile").classList.contains("active")) {
-        document.getElementById("home-mobile").classList.remove("active");
-    }
-    if (document.getElementById("about-mobile").classList.contains("active")) {
-        document.getElementById("about-mobile").classList.remove("active");
-    }
-    if (document.getElementById("work-mobile").classList.contains("active")) {
-        document.getElementById("work-mobile").classList.remove("active");
-    }
-    if (document.getElementById("links-mobile").classList.contains("active")) {
-        document.getElementById("links-mobile").classList.remove("active");
-    }
-    if (document.getElementById("contact-mobile").classList.contains("active")) {
-        document.getElementById("contact-mobile").classList.remove("active");
-    }
+
 
     //Change the class for the current link
     x.classList.toggle("active");
@@ -130,11 +140,26 @@ function scrollToLink(elementId) {
     //location within the document. By using these properties of the DOM, the app
     //will perform consistently(-ish) across different devices, browsers, and
     //display resolutions.
-    //Adding an additional 150px based on some experiementation;
-    let topVisible = location.offsetTop - headerLocation.scrollHeight + 150;
+    //Adding an additional 150px based on some experimentation;
+    let topVisible = location.offsetTop - headerLocation.scrollHeight + 168;
 
     window.scrollTo({
         top: topVisible,
         behavior: "smooth"
     });
 };
+
+function setCopyrightDate() {
+    var now = new Date();
+    var x = document.getElementById('copyright');
+    x.innerText = now.getFullYear();
+}
+
+
+//This function is called by the <body onload=()> tag in the
+//document;
+function loadPage() {
+    this.setCopyrightDate();
+    this.addArticleDetails();
+    this.addCountBadgeID();
+}
