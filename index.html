@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Chad's CSS3 Demo Page</title>
+        <link rel="icon" href="favicon.ico" type="icon" sizes="16x16">
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body onLoad=addCountBadgeID(),addArticleDetails()>
+        <header id="header">
+            <!-- Jumbotron container -->
+            <div class="container jumbotron">
+                <div>
+                    <img src="css3.png" class="badge_image" id="CSS3-badge" />
+                </div>
+                <div class="jumbotron__title">
+                    Chad's Demo Page
+                </div>
+                <div class="jumbotron__tagline">
+                    Using CSS3 and Vanilla JavaScript to build a responsive web page.
+                </div>
+            </div>
+            <!-- End jumbotron container -->
+            <!-- Navigation -->
+            <div class="navigation">
+                <!-- Nav-bar -->
+                <div class="nav-bar">
+                    <div class="nav-bar-item active" id="home" onclick="setActive(this), scrollToLink('homeStart')">
+                        Home
+                    </div>
+                    <div class="nav-bar-item" id="about" onclick="setActive(this), scrollToLink('aboutStart')">
+                        About
+                    </div>
+                    <div class="nav-bar-item" id="work" onclick="setActive(this), scrollToLink('workStart')">
+                        Work
+                    </div>
+                    <div class="nav-bar-item" id="links" onclick="setActive(this), scrollToLink('linkStart')">
+                        Links
+                    </div>
+                    <div class="nav-bar-item" id="contact" onclick="setActive(this), scrollToLink('contactStart')">
+                        Contact
+                    </div>
+                </div>
+                <div class="nav-bar-mobile" id="nav-bar-mobile">
+                    <div class="mobile-menu-top" id="mobile-menu-top">
+                        <div class="nav-bar-toggle" id="nav-bar-toggle" onclick="toggleMenu(this)">
+                            <div class="nav-bar-item-mobile menu-label">Menu</div>
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
+                    <div class="nav-bar-item-mobile active" id="home-mobile" onclick="setActive(this), scrollToLink('homeStart')">
+                        Home
+                    </div>
+                    <div class="nav-bar-item-mobile" id="about-mobile" onclick="setActive(this), scrollToLink('aboutStart')">
+                        About
+                    </div>
+                    <div class="nav-bar-item-mobile" id="work-mobile" onclick="setActive(this), scrollToLink('workStart')">
+                        Work
+                    </div>
+                    <div class="nav-bar-item-mobile" id="links-mobile" onclick="setActive(this), scrollToLink('linkStart')">
+                        Links
+                    </div>
+                    <div class="nav-bar-item-mobile" id="contact-mobile" onclick="setActive(this), scrollToLink('contactStart')">
+                        Contact
+                    </div>
+
+                </div>
+                <!-- End Nav-bar -->
+            </div>
+        </header>
+
+
+        <!-- Main Content -->
+        <div class="main">
+            <div id="home" class="home">
+                <span id="homeStart"></span>
+                <article class="featured article" id="article1">
+                    <div class="article__title">
+                        I donna suppose you could speed things up?
+                    </div>
+                    <div class="article__details">
+                        <span class="article__author">Written By</span>
+                        <span class="article__date">Date written</span>
+                    </div>
+                    <div class="article__body">
+                        <p class="article__paragraph">
+                            How well do you know JavaScript and CSS? Without using jQuery or BootStrap? Yeah. For me,
+                            the answer is not good enough. This project is my attempt to work through the process of
+                            creating a "modern" looking design, without bloating my header with a huge chunk of CDN
+                            calls for minified files. I chose to limit myself to plain JavaScript and CSS 3. I leaned
+                            heavily on some StackOverflow articles (who doesn't) and several W3Schools examples (you
+                            don't?). Other than some gentle nudges in the right direction, I'm responsible for the
+                            structure and (sometimes) not-so-perfectly-optimized code. I'll post my source code to
+                            BitBucket or GitHub shortly. In short, this was a fun exercise.
+                        </p>
+                        <p class="article__paragraph">
+                            I used Visual Studio Code for this project, rather than Visual Studio 2015. First, I wanted
+                            to develop familiarity with the program. It's layout is a little different and definitely
+                            more bare-bones than VS2015. I also wanted to make use of that simplicity for switching
+                            between files, making saves, and just keeping the file structure simple as possible. If
+                            you're like me, when you're navigating the unknown (and JavaScript sometimes falls into
+                            that category), keeping things simple reduces your search for bugs and other dumb errors we
+                            all make.
+                        </p>
+                        <p class="article__paragraph">
+                            My goals for this project were simple:
+                            <ul>
+                                <li>
+                                    Create a single-page application
+                                </li>
+                                <li>
+                                    Use only HTML, CSS 3, and JavaScript for any features of the application
+                                </li>
+                                <li>
+                                    Make the page responsive to screen-size
+                                </li>
+                                <li>
+                                    The navigation should have a collapsable menu for small screens and indicate the
+                                    active section on all screens
+                                </li>
+                                <li>
+                                    Navigation should smoothly take you to the desired section
+                                </li>
+                                <li>
+                                    The navigation and header should be sticky on the top of the screen, no matter what
+                                    content section is displayed
+                                </li>
+                            </ul>
+                        </p>
+
+                    </div>
+                    <div class="comments">
+                        <span class="comment__count"><span class="comment__count">There are <span class="count_badge">x</span>
+                                comments on this post.</span></span>
+                    </div>
+                    <div class="expanded_comments">
+                        <span class="all_comments"></span>
+                    </div>
+                </article>
+                <article class="featured article" id="article2">
+                    <div class="article__title">
+                        You rush a miracle man, you get rotten miracles.
+                    </div>
+                    <div class="article__details">
+                        <span class="article__author">Written By</span>
+                        <span class="article__date">Date written</span>
+                    </div>
+                    <div class="article__body">
+                        <p class="article__paragraph">
+                            That doesn't leave much time for dilly-dallying. You just wiggled your finger. That's
+                            wonderful. I've always been a quick healer. What are our liabilities? There is but one
+                            working
+                            castle gate, and... and it is guarded by 60 men. And our assets? Your brains, Fezzik's
+                            strength, my steel. She is alive, or was an hour ago. If she is otherwise when I find her I
+                            shall be very put out. Truly, you have a dizzying intellect. Wait till I get going! Now,
+                            where
+                            was I? Australia. Yes, Australia. And you must have suspected I would have known the
+                            powder's
+                            origin, so I can clearly not choose the wine in front of me. I've seen worse.
+                        </p>
+                        <p class="article__paragraph">
+                            But it's so simple. All I have to do is divine from what I know of you: are you the sort of
+                            man
+                            who would put the poison into his own goblet or his enemy's? Now, a clever man would put
+                            the
+                            poison into his own goblet, because he would know that only a great fool would reach for
+                            what
+                            he was given. I am not a great fool, so I can clearly not choose the wine in front of you.
+                            But
+                            you must have known I was not a great fool, you would have counted on it, so I can clearly
+                            not
+                            choose the wine in front of me. You are sure nobody's followed us? As I told you, it would
+                            be
+                            absolutely, totally, and in all other ways inconceivable. No one in Guilder knows what
+                            we've
+                            done, and no one in Florin could have gotten here so fast. Out of curiosity, why do you
+                            ask? No
+                            reason. It's only... I just happened to look behind us and something is there. What?
+                            Probably
+                            some local fisherman, out for a pleasure cruise, at night... in... eel-infested waters...
+                            Hear
+                            this now: I will always come for you. But how can you be sure? This is true love - you
+                            think
+                            this happens every day? Who are you? No one of consequence. I must know… Get used to
+                            disappointment. kay.
+                        </p>
+
+                    </div>
+                    <div class="comments">
+                        <span class="comment__count">There are <span class="count_badge">x</span> comments
+                            on this post.</span>
+                    </div>
+                    <div class="expanded_comments">
+                        <span class="all_comments"></span>
+                    </div>
+                </article>
+                <article class="featured article" id="article3">
+                    <div class="article__title">
+                        You've done nothing but study swordplay?
+                    </div>
+                    <div class="article__details">
+                        <span class="article__author">Written By</span>
+                        <span class="article__date">Date written</span>
+                    </div>
+                    <div class="article__body">
+                        <p class="article__paragraph">
+                            But this is Buttercup's true love - If you heal him, he will stop Humperdinck's wedding.
+                            Wait.
+                            Wait. I make him better, Humperdinck suffers? Humiliations galore! HA-HA-HA! *That* is a
+                            noble
+                            cause. Give me the sixty-five, I'm on the job. You are sure nobody's followed us? As I told
+                            you, it would be absolutely, totally, and in all other ways inconceivable. No one in
+                            Guilder
+                            knows what we've done, and no one in Florin could have gotten here so fast. Out of
+                            curiosity,
+                            why do you ask? No reason. It's only... I just happened to look behind us and something is
+                            there. What? Probably some local fisherman, out for a pleasure cruise, at night... in...
+                            eel-infested waters... Doesn't sound too bad. I'll try to stay awake. Oh, well, thank you
+                            very
+                            much, very nice of you. Your vote of confidence is overwhelming. That may be the first time
+                            in
+                            my life a man has dared insult me. It won't be the last. To the pain means the first thing
+                            you
+                            will lose will be your feet below the ankles. Then your hands at the wrists. Next your
+                            nose.
+                            And then my tongue I suppose, I killed you too quickly the last time. A mistake I don't
+                            mean to
+                            duplicate tonight.
+                        </p>
+                        <p class="article__paragraph">
+                            Doesn't sound too bad. I'll try to stay awake. Oh, well, thank you very much, very nice of
+                            you.
+                            Your vote of confidence is overwhelming. Surrender. You mean you wish to surrender to me?
+                            Very
+                            well, I accept. You seem a decent fellow... I hate to kill you. You seem a decent fellow...
+                            I
+                            hate to die. Begin. And wuv, tru wuv, will fowow you foweva…
+                        </p>
+
+                    </div>
+                    <div class="comments">
+                        <span class="comment__count"><span class="comment__count">There are <span class="count_badge">x</span>
+                                comments on this post.</span></span>
+                    </div>
+                    <div class="expanded_comments">
+                        <span class="all_comments"></span>
+                    </div>
+                </article>
+            </div>
+            <div id="about" class="about">
+                <span id="aboutStart"></span>
+                <h1>About</h1>
+                <p>
+                    That Vizzini, he can *fuss*. Fuss, fuss... I think he like to scream at *us*. You are amazing. I
+                    ought to be, after 20 years. Oh, there's something I ought to tell you. Tell me. I'm not
+                    left-handed either. Why do you wear a mask? Were you burned by acid, or something like that? Oh no,
+                    it's just that they're terribly comfortable. I think everyone will be wearing them in the future.
+                    You're just stalling now. You'd like to think that, wouldn't you? You've beaten my giant, which
+                    means you're exceptionally strong, so you could've put the poison in your own goblet, trusting on
+                    your strength to save you, so I can clearly not choose the wine in front of you. But, you've also
+                    bested my Spaniard, which means you must have studied, and in studying you must have learned that
+                    man is mortal, so you would have put the poison as far from yourself as possible, so I can clearly
+                    not choose the wine in front of me. Grandpa, maybe you could come over and read it again to me
+                    tomorrow. As you wish.
+                </p>
+                <p>
+                    First things first, to the death. No. To the pain. I don't think I'm quite familiar with that
+                    phrase. I'll explain and I'll use small words so that you'll be sure to understand, you warthog
+                    faced buffoon. First things first, to the death. No. To the pain. I don't think I'm quite familiar
+                    with that phrase. I'll explain and I'll use small words so that you'll be sure to understand, you
+                    warthog faced buffoon. Why do you wear a mask? Were you burned by acid, or something like that? Oh
+                    no, it's just that they're terribly comfortable. I think everyone will be wearing them in the
+                    future. We'll never succeed. We may as well die here. No, no. We have already succeeded. I mean,
+                    what are the three terrors of the Fire Swamp? One, the flame spurt - no problem. There's a popping
+                    sound preceding each; we can avoid that. Two, the lightning sand, which you were clever enough to
+                    discover what that looks like, so in the future we can avoid that too. Westley, what about the
+                    R.O.U.S.'s? Rodents Of Unusual Size? I don't think they exist. He's right on top of us. I wonder if
+                    he is using the same wind we are using.
+                </p>
+            </div>
+            <div id="work" class="work">
+                <span id="workStart"></span>
+                <h1>Work</h1>
+                <p>
+                    Probably he means no *harm*. He's really very short on *charm*. A book? That's right. When I was
+                    your age, television was called books. And this is a special book. It was the book my father used
+                    to read to me when I was sick, and I used to read it to your father. And today I'm gonna read it to
+                    you. Finish him. Finish him, your way. Oh good, my way. Thank you Vizzini... what's my way? Pick up
+                    one of those rocks, get behind a boulder, in a few minutes the man in black will come running
+                    around the bend, the minute his head is in view, hit it with the rock. My way's not very
+                    sportsman-like. You're trying to trick me into giving away something. It won't work. IT HAS WORKED!
+                    YOU'VE GIVEN EVERYTHING AWAY! I KNOW WHERE THE POISON IS! Then make your choice. My men are here! I
+                    am here! But soon *you* will not be here!
+                </p>
+                <p>
+                    I do not mean to pry, but you don't by any chance happen to have six fingers on your right hand? Do
+                    you always begin conversations this way? All right. Where is the poison? The battle of wits has
+                    begun. It ends when you decide and we both drink, and find out who is right... and who is dead. I
+                    will, and I choose... what in the world can that be? What? Where? I don't see anything. Well, I- I
+                    could have sworn I saw something. But no matter. What's so funny? Roberts had grown so rich, he
+                    wanted to retire. He took me to his cabin and he told me his secret. 'I am not the Dread Pirate
+                    Roberts' he said. 'My name is Ryan; I inherited the ship from the previous Dread Pirate Roberts,
+                    just as you will inherit it from me. The man I inherited it from is not the real Dread Pirate
+                    Roberts either. His name was Cummerbund. The real Roberts has been retired 15 years and living like
+                    a king in Patagonia.' Beat it or I'll call the Brute Squad. I'm on the Brute Squad. You ARE the
+                    Brute Squad!
+                </p>
+            </div>
+            <div id="links" class="links">
+                <span id="linkStart"></span>
+                <h1>Links</h1>
+                <p>
+                    I challenge you to a battle of wits. For the Princess? To the death? I accept! I'll tell you in a
+                    minute. First, let's drink. Me from my glass, and you from yours. You guessed wrong. You are sure
+                    nobody's followed us? As I told you, it would be absolutely, totally, and in all other ways
+                    inconceivable. No one in Guilder knows what we've done, and no one in Florin could have gotten here
+                    so fast. Out of curiosity, why do you ask? No reason. It's only... I just happened to look behind
+                    us and something is there. What? Probably some local fisherman, out for a pleasure cruise, at
+                    night... in... eel-infested waters... I've seen worse. Who are you? No one of consequence. I must
+                    know… Get used to disappointment. kay.
+                </p>
+                <p>
+                    Look, are you just fiddling around with me or what? I just want you to feel you're doing well. Who
+                    are you? Are we enemies? Why am I on this wall? Where is Buttercup? Let me explain. No, there is
+                    too much. Let me sum up. Buttercup is marry Humperdinck in little less than half an hour. So all we
+                    have to do is get in, break up the wedding, steal the princess, make our escape... after I kill
+                    Count Rugen. You are amazing. I ought to be, after 20 years. Oh, there's something I ought to tell
+                    you. Tell me. I'm not left-handed either. How old were you? I was eleven years old. And when I was
+                    strong enough, I dedicated my life to the study of fencing. So the next time we meet, I will not
+                    fail. I will go up to the six-fingered man and say, 'Hello. My name is Inigo Montoya. You killed my
+                    father. Prepare to die.' You are sure nobody's followed us? As I told you, it would be absolutely,
+                    totally, and in all other ways inconceivable. No one in Guilder knows what we've done, and no one
+                    in Florin could have gotten here so fast. Out of curiosity, why do you ask? No reason. It's only...
+                    I just happened to look behind us and something is there. What? Probably some local fisherman, out
+                    for a pleasure cruise, at night... in... eel-infested waters...
+                </p>
+            </div>
+            <div id="contact" class="contact">
+                <span id="contactStart"></span>
+                <h1>Contact</h1>
+                <p>
+                    All right. Where is the poison? The battle of wits has begun. It ends when you decide and we both
+                    drink, and find out who is right... and who is dead. Hello there. Slow going? Look, I don't mean to
+                    be rude but this is not as easy as it looks, so I'd appreciate it if you wouldn't distract me.
+                    Sorry. Thank you. You've done nothing but study swordplay? More pursue than study lately. You see,
+                    I cannot find him... it's been twenty years now and I'm starting to lose confidence. I just work
+                    for Vizzini to pay the bills. There's not a lot of money in revenge. Well I certainly hope you find
+                    him someday. You are ready then? Whether I am or not, you've been more than fair. Give us the gate
+                    key. I have no gate key. Fezzik, tear his arms off. Oh, you mean *this* gate key. Doesn't sound too
+                    bad. I'll try to stay awake. Oh, well, thank you very much, very nice of you. Your vote of
+                    confidence is overwhelming.
+                </p>
+                <p>
+                    Ah. Are you coming down into the pit? Wesley's got his strength back. I'm starting him on the
+                    machine tonight. Tyrone, you know how much I love watching you work, but I've got my country's
+                    500th anniversary to plan, my wedding to arrange, my wife to murder and Guilder to frame for it;
+                    I'm swamped. Get some rest. If you haven't got your health, then you haven't got anything. Westley
+                    didn't reach his destination. His ship was attacked by the Dread Pirate Roberts, who never left
+                    captives alive. When Buttercup got the news that Westley was murdered… Murdered by pirates is good…
+                    We'll never succeed. We may as well die here. No, no. We have already succeeded. I mean, what are
+                    the three terrors of the Fire Swamp? One, the flame spurt - no problem. There's a popping sound
+                    preceding each; we can avoid that. Two, the lightning sand, which you were clever enough to
+                    discover what that looks like, so in the future we can avoid that too. Westley, what about the
+                    R.O.U.S.'s? Rodents Of Unusual Size? I don't think they exist. Since the invention of the kiss,
+                    there have been five kisses rated the most passionate, the most pure. This one left them all
+                    behind. The end. Truly, you have a dizzying intellect. Wait till I get going! Now, where was I?
+                    Australia. Yes, Australia. And you must have suspected I would have known the powder's origin, so I
+                    can clearly not choose the wine in front of me.
+                </p>
+            </div>
+        </div>
+        <footer>
+
+        </footer>
+        <script src="core.js"></script>
+    </body>
+
+</html>
