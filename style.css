@@ -2,21 +2,20 @@
 
 body {
     font-family: 'Oswald', sans-serif;
-    margin-left: 5px;
-    font-size: 18px;
+    margin: 12px 12px 32px 12px;
+    font-size: 16px;
     font-variant: normal;
 }
 
 h1 {
     font-size: 1.5rem;
-    margin-left: 20px;
-    padding: 20px;
+    margin: 32px 0 16px 24px;
 }
 
 p {
     font-size: 1rem;
-    padding: 10px;
     text-align: justify;
+    margin: 16px 24px 16px 24px;
 }
 
 p::lastLine {
@@ -30,6 +29,8 @@ header {
     position: sticky;
     top: 0;
     clear: both;
+    background-color: #fff;
+    padding: 0 0 4px 0;
 }
 
 .badge_image {
@@ -40,11 +41,12 @@ header {
 .jumbotron {
     max-height: max-content;
     min-height: min-content;
-    width: 100%;
+    width: calc(width - 32px);
     overflow: hidden;
     background-color: #555;
-    margin: 0 auto;
+    margin: 16px 0 4px 0;
     text-align: center;
+    border-radius: 8px;
 }
 
 .jumbotron__title {
@@ -65,7 +67,7 @@ header {
     margin: auto 0;
     font-size: 1.5rem;
     background-color: #d3d3d3;
-    opacity: 70%;
+    border-radius: 8px;
 }
 
 .nav-bar {
@@ -92,7 +94,7 @@ header {
     color: #fff;
     outline: solid 1px #555;
     border: 2px solid #2F92F9;
-    box-shadow: 10px 10px hsla(0, 0%, 68%, .8);
+    box-shadow: 4px 4px rgba(12, 12, 12, 0.8);
     padding: 18px;
 }
 
@@ -155,6 +157,7 @@ header {
         min-height: 50px;
         background-color: #d3d3d3;
         transition: 0.4s;
+        border-radius: 8px;
     }
 
     .nav-bar-mobile.change {
@@ -165,7 +168,7 @@ header {
         color: #fff;
         background-color: #0B51C1;
         border: 2px solid #2F92F9;
-        border-radius: 5px;
+        border-radius: 8px;
         box-shadow: 4px 4px #555;
         margin: -2px;
         height: min-content;
@@ -267,7 +270,7 @@ header {
 
 
 article {
-    width: 90%;
+    width: calc(width - 40px);
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -284,9 +287,9 @@ article {
 }
 
 .article__date {
+    color: black;
     font-size: 0.85rem;
     /* padding-right: 10px; */
-    opacity: 0.85%;
     /* margin-top: -10px; */
     float: right;
 }
@@ -306,6 +309,7 @@ article p:first-child::first-letter {
     margin-right: 0.25rem;
     background-color: #0B51C1;
     border: 2px solid #555;
+    border-radius: 8px;
 }
 
 article p:first-child::first-line {
@@ -318,13 +322,13 @@ article p:first-child::first-line {
     font-size: 0.85rem;
     background-color: #4f4f4f;
     min-height: 1px;
-    width: 100%;
+    width: calc(width - 16px);
+    padding: 4px 8px 4px 8px;
+    margin: 8px;
+    border-radius: 4px;
 }
 
-.comments:hover {
-    text-decoration: none;
-}
-
+.comments:hover,
 .comments:active {
     text-decoration: none;
 }
@@ -333,20 +337,19 @@ article p:first-child::first-line {
     color: #fff;
     font-weight: normal;
     padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 0;
 }
 
 .count_badge {
     background-color: #2F92F9;
     border: 0px solid #0B51C1;
-    font-weight: bold;
+    font-weight: 800;
     text-align: center;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding: 0 4px;
     border-radius: 25%;
     min-height: 1px;
     min-width: 1px;
+    margin: 0 4px;
 }
 
 .expanded__comments {
@@ -375,32 +378,35 @@ article p:first-child::first-line {
     background-color: #fff;
 } */
 
-.about {
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.work {
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
+.about,
+.work,
 .links {
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    width: calc(width - 32px);
+    padding: 8px 16px;
+    margin: 56px 0 56px 0;
+    border-radius: 8px;
 }
 
 .contact {
-    width: 100%;
-    margin-top: 50px;
-    padding-bottom: 150px;
+    width: calc(width - 32px);
+    margin: 56px 0 168px 0;
+    border-radius: 8px;
 }
 
 .about,
 .links {
     color: #fff;
     background-color: #0B51C1;
+}
+
+.copyright {
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-weight: 800;
+    width: calc(width - 32px);
+    color: #fff;
+    background-color: #4f4f4f;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 4px 16px 4px;
 }
