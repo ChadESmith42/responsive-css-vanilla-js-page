@@ -71,13 +71,11 @@ function setActive(x) {
     // Basically, need to turn off the active for the previous link ...
     // Check the other links, and remove the active class;
     var locations = [ 'home', 'about', 'work', 'links', 'contact','home-mobile', 'about-mobile', 'work-mobile','links-mobile','contact-mobile'];
-    for (let loc of locations) {
+    locations.forEach(loc => {
         if (document.getElementById(loc).classList.contains("active")) {
             document.getElementById(loc).classList.remove("active");
         }
-    }
-
-    // Change the class for the current link
+    });
     x.classList.toggle("active");
     toggleMenu(document.getElementById("nav-bar-toggle"));
 }
