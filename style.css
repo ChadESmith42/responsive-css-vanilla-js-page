@@ -257,7 +257,7 @@ article p:first-child::first-line {
 
 /************ MOBILE Specific CSS Classes   ***************/
 
-@media only screen and (max-width: 477px) {
+@media only screen and (max-width: 678px) {
     .badge_image {
         max-height: 80px;
         margin-top: 20px;
@@ -291,7 +291,6 @@ article p:first-child::first-line {
         min-height: 50px;
         background-color: #d3d3d3;
         transition: 0.4s;
-        border-radius: 8px;
     }
 
     .nav-bar-mobile.change {
@@ -302,7 +301,7 @@ article p:first-child::first-line {
         color: #fff;
         background-color: #0B51C1;
         border: 2px solid #2F92F9;
-        border-radius: 8px;
+        border-radius: 5px;
         box-shadow: 4px 4px #555;
         margin: -2px;
         height: min-content;
@@ -399,5 +398,3 @@ article p:first-child::first-line {
         background-color: #2F92F9;
     }
 }
-
-/*************** End of MOBILE *****************/
